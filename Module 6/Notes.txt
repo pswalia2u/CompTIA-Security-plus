@@ -1,0 +1,288 @@
+6. Cryptography & PKI 
+
+6.1
+Crypto Concepts-Part 1
+	a)Encoding vs Encryption
+
+	b)Properties of Cryptography/Encryption:
+		1.Confusion
+		2.Diffusion
+
+	c)Definations-
+		1.Algorithm
+		2.Keys-Secret value used with an algorithm to encrypt and decrypt messages.
+		3.Kerckhoff's priciple states: "only secrecy of the key provides security."
+
+	d)Symmetric Encryption:
+		1)Same key used for both encryption and decryption.
+		2)Advantages:
+			a)Easier to implement
+			b)Faster
+		3)Disadvantage:
+			a)Key distribution
+
+		4)Types:
+			a)Block ciphers-Chunks of data/fixed length group of bits
+				1.Requires padding if not enough data for a block.
+				2.Block size
+				3.More complex, not as fast
+				4.May require an initialization vector.
+				
+			b)Stream ciphers-Bits encrypted one at a time.
+				1.Faster/higher performance
+				2.Susceptible to malacious insertions.
+
+	e)Key Strength:
+		a)Length and complexity of the key
+		b)Longer is more secure.
+		c)Key entropy or randomness-generated through pseudo-random numbers.			d)Initialization vector(IV):A fixed size random or psuedo-random value. Ensures that each message encrypted differently.
+		e)Nonce-a random or pseudo-random number that used only ince and associated with a time stamp to increase key strength. A nonce can be used as an IV.
+
+	f)Key Exchange:
+		a)Process and method for sharing encryption keys.
+
+		b)Especially when sender/ reciever are distant.
+
+		c)In-band-key shared in the communications channel as the message.
+
+		d)Out-of-band- using another transmission media agreed upon in advance.
+
+		e)Forward secrecy/Perfect forward secrecy- if one key is compromisied, futher keys will not be compromised 
+
+	g)Session and Ephemeral Keys:
+		a)Session keys are randomly gerated to perform both encryption and decryption during the communication of a session between two parties.
+
+		b)Valid only during that one communication session and are deleted.
+
+		c)Ephemeral keys-also only used for one session. Common to ephemeral key agreement protocols.
+
+	h)Asymmetric Encryption
+		1.Uses two keys-one to encrypt the other to decrypt.
+		2.Keys are mathematically related.
+		3.Public/Private key encryption.
+		4.Only private keys needs to be kept secret and only it can decrypt the message.
+
+		5.Digital Signatures/Nonrepudiation:
+			a)
+			b)Message is signed using sender's priivate key.
+			c)Anyone can verify signature by using the sender's public key.
+			d)Used for repudiation(Proof of origin).
+			e)Used for message integrity(proof messge hasn't been altered)
+			f)Doesn't protect message confidentiality.
+
+		6.Public Key Infrastructure:
+			a)A set of roles. policies, and procedures needed to manage public-key encryption.
+
+			b)The process of creating, managing, distributing, storing, using, and revoke keys and digital certificates.
+
+Crypto Concepts-Part 2
+	a)Hashing- Work by taking a string of any length and producing a fixed-length string for output.
+
+	Hashing rules:
+		1.Speed same no matter the data size.
+		2.Impossible to regenrate the original message from it's hash value.
+		3.Avoid hash collisions- each message has its own hash.
+		5.Changing the original changes the hash value.
+
+	b)Hashing Issues:
+		a)Precoputing hash values of common words(rainbow tables).
+		This attack is prevented with a salt. Salting using a prefix consisting of a random string of characters to passwords before they are hashed.
+
+		b)Collision attacks tries to find two input strings of a hash function that have the same output.
+
+	c)Elliptical Curve and Quantum cryptography
+
+	d)Use of proven crypto algorithms
+		1.NIST maintains publications and guidance for the use of approved cryptographic and hashing algorithms.
+
+		2.Crypto best practices:
+		 a)Use well-known and approved cryptographic algorithms.
+		 b)Adhere to required minimum key guidance for the chosen algorithm.
+		 c)Use approved cyptographic modes.
+		 d)Use strong random number generators.
+
+	e)Obsfucation and Steganogrphy:
+		1.Obsfucation
+			a)The act of making something difficult to understand.
+			b)Should rely on something not known or widely discovered.
+			c)Does not provide strong security.
+
+		2.Steganography
+			a)Means "hidden writting".
+			b)Hiding messages, often in other media, so that unintended recipients are ot even aware of any message.
+
+		3.Cryto Use Cases:
+			State of Data
+			a)Data at rest(stored).
+			b)Data in transit(across a network)
+			c)Data in use(being processed)
+
+
+6.2.1 
+Crypto Algorithms and PKI
+	a)Obsfucation-The act of making something difficult to understand.Example Substitution cipher ROT13, XOR.
+
+	b)DES-Data Encryption Standard
+		1.Adopted by NIST in 1977
+		2.Block cipher using 64-bit blocks- 56-bit key + 8 bits of parity.
+		3.Short key length subject to brute force-force attacks.
+
+	c)3DES-Triple DES
+		1.DES algorithm computed three times.
+		2.Using a "key bundle" that comprises three different DES keys, each of 56 bits=total bit strength of 168 bits(known as 3TDEA).
+		3.Also option to reuse keys.
+
+	d)AES- Advanced Encryption Standard
+		1.Original name Rijndel.
+		2.dopted by NIST in 2001.
+		3.Block cipher with 128 bit block size.
+		4.Three key lengths:128,192 and 256 bits.
+		5.Uses multiple encryption rounds-
+			10 rounds for 128-bit keys, 12 rounds for 192-bit keys, and 14 rounds for 256-bit keys.
+
+	e)RC4/RC5/RC6-Rivest Cipher
+		1.RC4 is a stream cipher, RC5 and RC6- block ciphers.
+		2.Works with key sizes between 40 and 2048 bits.
+
+	f)Blowfish/Twofish
+
+	g)One-Time Pad(OTP):
+		1.Most secure algorithm.
+		2.Use of a key which is as long as the plain-text message.
+		3.Only used once and then destroyed.
+
+	h)Skipjack
+		1.NSA developed block cipher used in clipper chip.
+		2.Uses an 80-bit key to encrypt 64-bit blocks of data.
+
+	i)Cipher modes(Block cipher):
+		1)CTR-Counter Mode
+			a)Turns a block cipher into stream cipher.
+			b)Used to generate a keystream.
+			c)Each block combine a nonce or IV with a sequentially assigned number to produce a unique counter block that is then encrypted.
+
+		2)CBC-Cipher-Block Chaining
+			a)Uses an IV with the first block.
+			b)Thereafter, each block of plain text is obuscated with the cipher text from the previous block before it is encrypted.
+			c)Introduces more diffusion and reduces effects of plain-text attacks.
+
+		3)GCM-Galois/Counter Mode
+			a)Provides both integrity and confidentiality.
+			GCM uses CTR with 128-bit blocks.
+			b)Each 128-bit block is given an encrypted number. That result is then obfuscated with the plain text, producing the cipher text.
+			c)GMAC(Galois Message Authentication Code) is an authentication-only variant of the GCM which can be used as an incremental message authentication code.
+
+6.2.2 
+
+Asymmetric Algorithms:
+	a)Extra computational overhead because of using 2 keys.
+	b)Used for Secure exchange of a shared keys used for symmetric encryption and in digital signatures.
+	c)Solves the issue of key exchange with symmetric encryption.
+
+Asymmetric Algorithms:
+	a)Riest, Shamir, and Adleman(RSA)
+		1.Used for key exchange and digital signatures.
+		2.Key can be any length.
+		3.Algorithm works by multiplying two large prime numbers.
+		4.Derives two different numbers: one public key and one private key.
+
+	b)Diffie-Hellman key exchange
+		1.Two parties, without prior arrangement can agree on a secret key that is known only to them.
+		2.Only used to gernerate a shared key.
+		3.Key can be safely/secretly shared on apublic network.
+
+	c)Deffie-Hellman Ephemral
+		1.Uses a different key for every conversation.
+		2.Supports perfect forward secrecy.
+
+	d)Elliptic curve cryptography(ECC)
+
+	e)Elliptic Curve Deffie-HellmanEphemeral(ECDHE)
+
+	f)El Gamal
+		1.An extension to the Deffie-Hellman using an ephemeral key.
+
+	g)Pretty Good Privacy(PGP) and GNU Privacy Guard(GPG)
+		1.Used to encrypt and sign email messages
+
+Hashing Algorithms:
+	a)MD5(Message Digest 5)
+	b)SHA(Secure Hash Algorithm)
+	c)Message Authentication Code(MAC)
+	d)Hash-based Message Authentication Code(HMAC)
+	e)RACE Integrity Primitives Evaluation Message Digest(RIPEMD)
+
+Attacks on hashes:
+	a)Rainbow Table-John the ripper
+
+Key Stetching: Process used to take weak key nd make it stronger, usully by making it longer.
+	a)Bcrypt
+		1.Based on the blowfish algorithm.
+		2.Provides an adaptive hash function based on a key factor.
+
+	b)PBKDF2(Password-Based Key Derivation Function 2)
+		1.Algorithm applies a psuedo-random function to the pssword, combined with a salt of atleast 64 bits, and then repeats the process at least 1000 times.
+
+6.3 Wireless Security
+	6.3.1 Wireless Access Methods:
+		a)Open Authentication- only need to know the network name/SSID.
+
+		b)Shared Authentication
+			1.The client and the wireess access point must negotiate and share a key prior to initiating communications.
+
+			2.Pre-Shared key(PSK)- Each user uses the same key to connect to the wifi network.
+
+		c)Enterprise
+			1.A server handles distribution of cryptographic keys and/or digital certificates.
+			2.Extensible Authentication Protocol(EAP)
+
+	6.3.2 Wifi Protected Setup(WPS)
+		A)Modes:
+			1.PIN entry
+			2.Push-button configuration(PBC)
+			3.Near Feild Communication(NFC)
+
+	6.3.3 Wireless Cryptographic protocols
+		a)Wired Equivalent Privacy(WEP)
+		b)Wifi Protected Access(WPA)
+		c)WPA-2
+			1.Uses AES for encryption.
+			2.Based on IEEE 802.11i standard
+			3.Uses CCMP(Counter Mode with Cipher Block Chaining Message Authentication Code Protocol)
+			 and Replaced TKIP.
+
+	6.3.4 Authentication Protocols
+		a)EAP 
+			1.Requires an authentication server.
+			2.Allows an=uthentication methods beyond username/password
+			3.Provides support for public certificates.
+			4.Four modes
+				a)PEAP-Protected EAP
+				b)EAP-TLS-EAP-Transport Layer Security
+				c)EAP-TTLS-EAP Tunneled Transport Layer Security.
+				d)EAP FAST-EAP Flexible Authentication via Source Tunneling.
+
+6.4 PKI(Public Key Infrastructure)
+	a)Solves the issues with key management.
+	b)A set of roles, policies, and procedures needed to manage public-key(asymmetric) encryption.
+	c)The process of creating, managing, distributing, storing, using, and revoke keys and digital crtificates.
+	d)Public Key Infrastructure X.509 is the working group formed by the IETF to develop standards and models PKI.
+
+	e)PKI Components
+		1.Digital Certificate-A digitally signed block of data used to prove the ownership of a public key issued by a Certificate Authority.
+
+		2.Includes
+			a)Information about the key.
+			b)Information about the identity of its owner.
+			c)and also contains the digital signature of an entity that has verified the certificate's contents(called the issuer)
+
+		3.X.509 v3 standard defines the certificate formats and feilds for public keys
+
+
+
+
+
+
+
+
+

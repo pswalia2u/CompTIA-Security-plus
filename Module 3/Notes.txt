@@ -1,0 +1,415 @@
+Architechture & Design(15%)
+3.1 
+Cybersecurity Frameworks, Best Practices and Guides
+3.1.1 Types of Frameworks:
+	1. Regulatory-Created by Government(HIPPA,Socks) vs Non-regulatory(PCI,DSS)
+	2.National vs International(ISO,GDPR)
+	3.Industry-specific frameworks
+a)ISO/IEC 27017:2015 -cloud Services
+b)NIST: 1)SP 800-30 - Guide for Conducting Risk Assessments
+		2)SP 800-35 - Guide to Information Technology Security Services
+		3)SP 800-35 - Security and Privacy Controls	for Federal Information Systems and Oragnisations
+c)PCI-DSS(Payment Card Industry Data Security Standard)
+
+3.1.2 Benchmarks/Secure Configuration Guides
+General Purpose guides:
+a)DOD Security Technical Implementation Guides(STIGs)
+b)Center for Internet Security Benchmarks
+
+3.1.3 Defense in Depth/Layered Security
+a)Segmentation- Splitting computer network into zones or subnetworks based on business function or security needs using:
+	1)Physical devices: Routers/Switches
+	2)Virtual Local Area Networks(VLANs)
+	3)Air Gaps
+b)Control Diversity- Addressing a security concern using multiple controls, that don't depend on another
+
+c)Vendor Diversity- Addressing a security concern using different vendor products, that don't depend on each other.
+
+d)User Training- reduces the impact of threats and vulnerabilities.
+
+3.2  Given a scenerio, implement secure network architechture concepts:
+3.2.1 Security Zones/Topologies
+each zone is seperated based on organizational role or level of security
+Types:
+	a)DMZ- 
+		1.Small network between internal network and external network.
+		2.Provides a buffer zone/defense-in-depth
+		3.Usually set-up using firewalls
+		4.Contains hardend systems that need to reach each network segment.(like email,web,or DNS servers)
+	b)Extranet/Intranet
+	c)Wireless Segmentation
+		1.Seperating wireless access on an internal network/Creating buffer between wireless and wired networks.
+		2.Seperating guest wireless access from internal networks.
+		3.Controlled by 801.1x-Port based access control.
+		4.MAC filtering.
+	d)Guest
+Examples: 
+	a)Secure Zone- Most sensitive systems, with mission critical data.
+	b)General Work Zone- These are standard workstations and servers, with typical business data and functionality.
+	c)Low Security Zone- Systems, networks with no highly sensitive info, and breach of these systems would have minimal impact.
+
+3.2.2 Network segmentatation
+	a)SDN-Software Defined Network
+		1. The entire network is virtualized
+		2. Allows for easier network segmentation
+		3. Allows admins to place virtualized devices anywhere.
+
+3.3 Given a scenerio, implement secure systems design
+3.3.1
+Hardware/firmware security
+	1)FDE-Full Disk Encryption
+		a)Bitlocker
+		b)Veracrypt
+	2)SED-Self-Encrypting Drive
+		a)Automatically encrypts/decrypts a drive
+		b)Media Encryption Key(MEK)
+		c)Key Encyption Key-Supplied by the user
+
+	3)TPM(Trusted Platform Modules)-a specialized chip on an endpoint device that stores encryption keys specific to the host system for hardware authentication. Usually on the system Motherboard.
+
+	4)HSM(Hardware Security Modules)-a physical computing device that safegurds and manages digital keys for strong authentication and provides crypto processing. 
+
+	5)BIOS-Basic Input/Output System-boot-up configurtion.
+	6)UEFI-Unified Extensible Firmware Interface-modern boot-up configuration, replacing BIOS.
+
+	7)Secure boot and Attestation- a cryptographic hash of BIOS/UEFI OS boot loader and drivers and compares that against a stored hash. This is done to prevenyt rootkits and boot sector viruses.
+	
+	8)Root of Trust(RoT)-
+		a)Highly reliable hardware, firmware, and software components that perform specific, crucial functions.
+		b)a security process that has to begin with some unchangable hardware identity often stored in a TPM.
+
+	9)Supply chain-Conforming the origin of harware is secure.
+
+	10) Operating System Types
+
+	11)Patchmanagement-
+		a)Patch
+		b)Hotfixes-Small, Specific updates.
+		c)Service Pack-A collection of hot fixes that have been combined.
+		d)Updates-Provides more comprehensive improvements, additional security, or adds software enhancments and compatibility.
+		e)Upgrades- New version of the software
+
+	12)Operating System Hardening-
+		a)Secure configurations
+		b)Trusted operating system
+		c)Least functionality 
+		d)Application whitelisting/blacklisting
+		e)Disable default accounts/passwords
+		f)Disabling unnecessary ports and services
+
+3.4 
+Explain the importance of secure staging deployment concepts.
+	1)Secure baseline- creating own security benchmark.
+
+	2)Sperate Enviroments:
+		a)Development
+		b)Test-Replicating production as much as possible.
+		c)Staging- Code preparation/consolidation
+		d)Production- Where you do business. very restricted access.
+		e)Sandboxing- A completely isolated enviroment.
+
+	3)Sandboxing:
+		a)A safe enviroment for untrusted programs
+		b)Allows progrms and processes to be run in an isolated enviroment to limit access to files and the host system.
+
+3.5 
+Explain the security Implications of Embedded System
+	1)Embedded System: 
+		a)Device that has software embedded within the computer hardware, usually within Read Only Memory(ROM)
+		b)A computer system with a dedicated function with larger mechanical or electrical system.Types-
+
+	2)Soc(System on a Chip):
+	An integrated circuit that integrates all components of a computer or other electronic systems on a single computer chip.
+
+	3)Real-Time Operating Systems(RTOSs):
+		a)An operating system intended to serve real-time applications that process data as it comes in, typically without buffer delays.
+		b)Designed to have zero latency
+
+	4)ICS(Industrial Control Systems):
+		Encompasses several types of control systems and associated instrumentation used for industrial process control.
+
+	5)SCADA(Supervisor Control and Data Aquisition):
+		a)It is a type of ICS.
+		b)Used by utilities and Manufacturing.
+		c)Collects data from factories, plants, or other locations and forwards it to a central computer that manages/controls the system.
+
+	6)PLC(Programmable Logic Controllers):
+	Single used computers used in Manufacturing.
+
+	Security Standards for all these devices were definrd in ISA99.
+
+	7)HVAC(Heating Ventilation Air Conditioning) 
+
+	8)Special Purpose Devices e.g Medicl Devices-Pacemakers,Insulin Pumps
+	,Vehicles-Trucks and Autos
+	,Aircraft/Unmanned Areal Vehilces.
+
+3.6
+Secure application development and deployment concepts
+	1)Software Development Life Cycle Models
+		a)Waterfall-rquirements gathering, design, implementation/coding, testing/verification, deployment and maintainance.
+
+		b)Agile
+			1)Work in cycles, with each cycle producing specific deliverables.
+			2)A type of rapid prototyping through repeated processes.
+			3)Methods: Scrum, daptive Software Developent, Crystal, Feature-Driven Development, Dynamic Systems Development Method, Learn Software Development, XP(Extreme Programming).
+
+	2)Secure DevOps
+		a)Security integrated into all of your development operations, which includes database design, programming, and infrastructure.
+		b)Having security practices integrated into the entire software delivery cycle.
+		c)Address security concerns at the beginning of projects.
+		d)Add automated security testing techniques.
+		d)Continous integration
+		e)Security automation
+		f)Baselining
+		g)Immutable systems
+		h)Infrastructure as code(IaC)
+
+	3)Change Management/Version Control
+		a)Go hand-in-hand
+		b)Control and manage software changes-Needed for quality and security
+		c)Version control(aka source control):
+			10Prevents tampering or changing the source code or executables.
+
+	4)Provisioning and Deprovisioning:
+		a)Provisioning-The creation or update of a resource.
+		b)Deprovisioning-The removal of a resource.
+
+	5)Secure Coding Techniques:
+		a)Authentication:
+			1.Hard-coding credentials into code
+			2.Use of cookies
+		b)Proper eror handling
+			1.Errors should be generic/not divulge specific system or applicaion information.
+			2.Comments should not be visible in end-product.
+		c)Proper input validation:
+			1.Scrub and validate input from outside/untrusted sources.
+			2.Use of default values and character limitations.
+		
+		d)Normalization:Conversion of data to its anticipated, simplest known form.
+		
+		e)Stored Procedures: Associated with database queries/precomplied SQL statements.
+		
+		f)Stored Procedures: Associated with database queries/precompiled SQL statements.
+		
+		g)Code reuse/dead code:
+			1.Reusing existing software modules.
+			2.Reused code should be validated for vulnerabilities.
+			3.Dead code:no longer provides useful function, but not scrubbed.
+
+		h)Use of third party libraries and SDKs:
+			1.SDK-Software Development Kit
+			2.Know where your code comes from(trusted source)
+			3.check for CVE.
+
+		g)Code Signing:
+			1.Signing executable code using a certificate-based digital signature.
+			Proves the author's identity and provides code integrity.
+
+		h)Data exposure:Encryption of sensitive data at all times.
+
+		i)Encryption:
+			1.Standard encryption algorithms, hashing, and digital signatures.
+			2.TLS for data in transit.
+
+		j)Obsfuscation/camouflage:
+			1.Hiding back-end code
+			2.Prevents code from being reversed.
+
+		h)Memory Management:
+			1.Optimizes performance by assigning blocks of memory to programs and processes.
+			2.Vulnerabilities may exploit improper memory utilization(buffer overflow).
+
+		g)Server-side vs client-side execution and validation:
+			1.Client-side validation- entered data is validated via ascript on the user's browser before theform is sent to server.
+			2.Server-side validation-occurs on the back-end server housing the application code. Protects against malicious attempts by user to bypass validation.
+
+3.7
+Cloud and Virtualization:
+	a)On Premise(Server at organization's loc) vs Hosted(Servers outsourced to an external provider) vs Cloud(Using shared servers)
+
+	b)Cloud Storage:
+		1.DAS(Direct Attached Storage)
+		2.NAS(Network Area Storage)
+		3.SANs(Storage Area Network)
+
+	c)Virtualization Security
+		a)VM Escape Protection- Leaving an assigned VM
+		b)Vm Sprawl Avoidance-Overusing shared resources.
+		c)Cloud access security broker(CASB)-secure policy enforcement points.
+		d)Security as a service- a subscription based business model for aquiring and managing security functions.
+
+3.8
+Resiliency and Automation
+	a)Automation/Scripting:
+		1)Reduces risk through repeatable processes and automated courses of action.
+
+	b)Frameworks and Templates:
+		1)System baselines using standard templates.
+		2)Compare current state against desired state.
+
+	c)Master Image
+
+	d)Managing Cloud Risk
+		1)Nonpersistence- Temporary system images.Snapshot of known, good state.
+		2)Elasticity/Scalability:Adjusting resources as needed.
+		3)High Availability(HA)- the measures, such as redundancy, failover, and mirroring, used to keep services and systems operational.
+		4)Redundancy- Replicating systems usually at multiple sites.
+		5)Distibutive allocation/Load Balancing
+
+	e)RAID Storage
+	Types:
+		1)0-Disk striping
+		2)1-Disk mirroring
+		3)3-Disk striping with a parity disk
+		4)5-Disk striping with parity
+
+3.9 
+Physical Security and Enviromental Controls
+	a)Human life is always top priority.
+
+	b)Perimeter Security:
+		CPTED-Crime Prevention Through Enviromental Design
+
+	c)Physical Access Control:Mantrap
+		1)Double doors, where only one can be opened at a time.
+		2)Used to control personnel access.
+		3)Manually operated or automatic
+		4)Only room for one person.
+
+	d)Fire Extinguisher Types:
+		1)A-wood and paper
+		2)B-Flammble Liquids
+		3)C-Electrical
+		4)Flammable Metals
+
+	e)CCTV(Closed Capton Television)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

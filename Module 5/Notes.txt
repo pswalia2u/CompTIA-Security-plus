@@ -1,0 +1,600 @@
+5. Risk Management
+5.1 Explain the importance of policies, plans and procedures related to organizational security.
+
+(Policies, Plans and Procedures)
+5.1.1 Policies
+5.1.1 Policy Document Types:
+	a)Policies-General Management Rules
+	b)Standards-Specific mandatory controls, based on a given policy.
+	c)Guidelines-Recommendation or good practices.
+	d)Procedures-Instructions on how to implement a policy or standard.
+
+5.1.2 Policy Elements
+	a)Overview
+	b)Purpose
+	c)Scope
+	d)Target Audience
+	e)Definations
+	f)Version
+	g)Implimentation Date
+	h)Compliance/Exceptions
+	i)Policy Statements
+
+5.1.3 Common Policies
+	a)Acceptable Use Policy(AUP)
+	b)Access Policy
+	c)Authentication Policy
+	d)Backup and Recovery Policy
+	e)Data classification Policy
+	f)Email/Messaging Policy
+	g)Social Media Policy
+	h)Physical Security Policy
+
+5.1.4 Standard operating procedure(SOP):
+	a)Standard set of instructions for workers to carry out routine operations.
+	b)Aim to achieve efficiency and consistent output.
+
+5.1.5 Agreement types
+	a)Non-Disclosure Agreement(NDA)
+		-Protects against sensitive information disclosure.
+	b)Business Partner Agreement(BPAs)
+		-Specifies financial and fiduciary responsibilities(profit sharing)
+	c)Sevice-level Agreement(SLAs)
+		-Specifies nature and leve; of service by a provider.(uptime)
+	d)Memorandum of Agreement(MOA) and Memorandum of Understanding(MOU)
+		-Outlines the terms and details of an agreement.
+	e)Interconnection Security Agreement(ISA)
+		-Who are allowed to be connected to the network.
+
+5.1.6 Personnel management
+	a)Mandatory Vacations
+	b)Job rotation
+	c)Seperate the duties
+	d)Clean desk
+	e)Background checks
+	f)Onboarding
+	g)Terminations/Exit interviews
+	h)Role-based awareness traning-bsed on job responsibilities
+	i)Continuing education
+
+5.2 Summarize business impact analysis concepts
+	a)Business Impact Analysis(BIA):
+		1. The process of evaluating all of the critical systems in an organiation to define and recovery plans.
+		2.Determining the potential impacts(costs,resources,time) resulting from the interruption of time-sensitive or critcal business processes.
+		3.Identify critical business functions, systems, services, and technologies along with the cost associated with their loss and the maximum acceptable outage period.
+	
+	b)Crtical Functions:
+		-Mission-essential functions, roles, services, systems, applications or data required to sustain business.
+
+		Steps:
+		1.Identification and analysis
+		2.Prioritization
+		3.Calculating the Tangible and Intangible Impact on the Organization
+
+	c)Single Point Failiure
+
+	d)Recovery Objectives
+		1.RTO(Recovery Time Objective)-Maximum amount of time that a process is allowed to be down and the consequences still to be considered acceptable.
+		
+		2.RPO(Recovery Point Objective)-The point last known good data prior to an outage that is used to recover systems.
+			-As a general rule, the closser the RPO matches the time of the crash, the more expensive it is to obtain.
+
+		3.Mean Time To Failure(MTTF)-the average time to failiure for a nonrepairable system.
+			-Represents how long a product can reasonably be expected to perform, based on specific testing.
+
+		4.Mean Time Between Failures(MTBF)-the measure of the anticipated incidence of failure for  system or component.
+
+		5.Mean Time To Recovery/Restore/Repair(MTTR)-
+			a)The avg time required to repair a failed system, device or component and return it to operational status.
+			b)The calculation includes preparation time, active maintainance time, and delay time.
+			c)Often part of a maintainance contract.
+
+	e)Privacy assessments
+		1.Personally Identifiable Information(PII)-Information that can be used to distinguish or trace an individual's identity, such as name,social security number, biometrics records, etc. alone, or when combined with other personal or identifying information that is linked or linkable to a specific individua, such as date and place of birth, mother's maiden name,etc.
+
+		2.Personal Health Information(PHI) 
+
+		3.Privacy impact assessment(PIA)-
+			a)Identifies the adverse impacts that can be associated with the destruction, losss,curruption, or accidental disclosure of sensitive, personal or private data for the organization.
+			b)Required for any organization that collects, uses, stores, or processes PII or PHI.
+
+		4.Privacy Threshold Assessment(PTA)-
+			a)Determines wheather a system contains PII or PHI.
+
+5.3 Explian Risk Management processes and Concepts
+	5.3 pt1
+	Threat Assessment
+	a)Threat Agent/Source- the intent and method targeted at the intentional exploitation of a vulnerbility or a situation and method that may accidentally exploit a vulnerability.
+
+	b)Threat Vector- the method or path a threat uses to access the target.
+
+	c)Threat Assessment- a structured process used to identify and evaluate various risks or threats that an organization might be exposed to.
+
+	d)Threat Assessment Types-
+		1.Enviomental-Natural events
+			-wheather, storms, flooding, earthquakes, fire, etc.
+		2.Manmade- Human Cause
+			-flooding, fire accidents, etc.
+		3.Internal vs External
+			-Origin of the source.
+			-Is the threat agent inside your organization(employee, contractor, consultant)?
+
+	5.3 pt2
+	Risk management Processes and Assessments.
+		a)Risk Assessments/Risk Analysis/Risk Calculation-
+			1)Analyzing threats, vulnerabilities, and impacts of a loss of information- processing capabilities(systems) or a loss of information itself.
+
+			2)Process-
+				a)Identify assests
+				b)Identify associated threats & vulnerbilities.
+				c)Determine the likelihood of exploit or compromise.
+				d)Determine impact of exploit or compromise.
+				e)Prioritize risk activities/security controls.
+
+			3)Ways of Risk Analysis:
+				a)Qualitative
+					1. Estimating risk values(likelihood and impact)
+					2. Normally using a scale(1-5)
+					3. Subjective and less accurate.
+
+				b)Quantitative 
+					1. Using real values to calculate risk equation.
+					2.Numeric
+					3.Return on Investment(ROI)/Return on Security(ROSI)
+					4. SLE*ARO=ALE
+						
+						-ALE(Annual Loss Expectancy) value- a monetary measure of how much loss you could expect in a year.
+
+						-SLE(Single Loss Expectancy) value-how much you could expect to lose at any one time.
+
+						SLE can be divided into 2 components:-
+							1)AV(Asset Value): the value of the item.
+							2)EF(Exposure Factor): the percentage of loss
+
+					5.ARO(Annual Rate of Occurence)- the likelihood, often drawn from historical data, of an event occuring within a year.
+		b)Risk Response/Stratergies.
+			1)Avoidance-making the decision not to engage in the actions associated with risk.
+			2)Transfer-Sharing the burden of the risk with another party(insurance).
+			3)Mitigation-Taking steps to reduce the likelihood or impact of a risk.
+			4)Acceptance-Choosing to live with a risk. Must be a conscious choice by management.
+
+		c)Risk Registe(Documentation).
+			1)Recording informtion about an identified risk.
+			2)Can be specialized software program, cloud serice, or master document.
+			3)Contains details about the risks, risk decisions, mitigating controls, risk owner, time frames, residual risk rtc.
+			4)Ensures organization risk tolerance/appetite(amount of risk a organization ) is aligned.
+
+5.4 Given a scenerio, follow incident response procedures.
+	5.4.1 pt1
+	Incident response plan
+	a)Incident- An occurence that actually or potentially jeopardizesthe confidentiality, integrity, or availability of an information system or the information the system processes, stores, or transmits or that constitutes a violation or imminent threatof violation of security policies, security procdures, or acceptable use policies.
+
+	b)Incident response plan- The documentation of a predetermined set of instructions or procedures to detect, respond to, and limit consequences of a malacious cyber attacks against an organization's information systems.
+
+	NIST Computer Security Incident Handling Guide provides guide on exact elements to include:
+		1.Mission,stratergies, and goals of Incident Response.
+		2.Senior management approval.
+		3.Approach to incident response.
+		4.Response team communications.
+		5.Metrics for measuring response capabilities and effectiveness.
+		6.Roadmap for maturing response capability.
+		7.How the incident response program fits into the organization.
+
+		1)Types/Categories of incidents:
+			a)Natural
+			b)Mechanical
+			c)Accidentl/Human error
+			d)Malacious/Compromise C-I-A
+			e)Policy Violation
+
+		2)Roles and Resposibilities
+			a)Granting clear authority for actions to be taken during an incident
+			b)Who can/does perform IRP activities:
+				1.Incident alerting
+				2.Identification/Triage
+				3.Decisions making-must be an organiztional executive.
+				4.Equipment collection/confiscation
+				5.Forensics-Idependence/segregation of duties
+				6.Repair/Recovery
+				7.Reporting
+				8.Communicating-talking outside the organization
+
+		3)Incident Response Teams-
+			a)Computer Emergency Response Team(CERT)
+			b)Cyber Incident Response Team(CIRT)
+			c)Computer Security Incident Response Team(CSIRT)
+			d)Formalized, standing or ad-hoc
+			e)Internal or external
+			f)Centeral, distributed or coordinating
+			g)They include:
+				1.systems,network,database administrators
+				2.Legal 
+				3.HR
+				4.Management
+
+		4)Reporting reuirements/escalation
+			a)Document, document, document
+			b)Included in many help desk systems
+			c)Collecting evidence(physical, virtual etc)
+			d)Reporting/disclosing to
+				1.internl management
+				2.Legal authorities/law enforcement(local,FBI)
+				3.Affected organizations/clients/customers
+				4.CERT(www.cert.org)
+				5.Internet Crime Complaint Center(IC3)
+				6.Insurance(cyber)
+
+		5)Testing, Exercisees, & Training
+			a)Be prepared
+			b)Prepare each role with training.
+			c)Practicing using real world scenerios.
+			d)Test systems and processes to find issues.
+			e)Exercises-practice using real world scenerios.
+				1.Table-top exercises
+				2.Functional
+
+	5.4.2 pt2 
+	Incident Response Process
+		a)Incident Preparation-
+			1.Creating the Incident Response Plan
+			2.Hardware/Software/Communications
+				-Jump kit
+			3.Testing and Exercises
+			4.Creating checklists.
+				a)Technical
+				b)Procedures
+				c)Contacts
+
+		b)Incident Detection/Identification/Analysis
+			1.Alerting
+				a)Logs-IDS,SEIM,AV
+				b)Humans
+			2.Incident triage/validation
+			
+5.5 Summarize basic concepts of forensics.
+	a)Stratergic intelligence/Counterintelligence:
+		1.Gathering of information/data regarding an incident.
+		2.Nature of the threat actor/source/vector.
+		3.Pull from multiple data sources(internal and external)
+		4.Use of active logging.
+
+	b)Order of volatility:
+		1.The order for collecting evidence.
+		2.Volatile data is easily or quickly lost.
+			a)Resident computer memory
+			b)Caches/temporary storage.
+			c)Physical media(USB)
+		3.Capture data that will be lost first.
+		4.Accomplished during incident identification.
+
+	c)Chain of custody
+		1.Provides a clear record of the path evidence takes from aquisition to disposal.
+		2.Any items taken must be secured to preserve its integrity e.g faraday bag.
+
+	d)Documentation/tracking form
+	e)Evidence must be:
+		1.Admissible
+		2.Authentic
+		3.Complete
+		4.Reliable
+		5.Beleivable
+
+	f)Legal hold
+		-Preservation on all forms of relevant information when litigation is reasonably anticipated.
+
+		-A request to not destroy what might be relevant to a legal matter.
+
+	g)Data acquisition
+		1)Capture system image
+			a)A sytem image is a snapshot of what exists.
+			b)Capturing an image of the operating system in its exploited state.Types-
+				1.Disk to disk-physical media, original to copy.
+				2.disk to an image file-pgysical to logical(VM)
+				3.Image file to a disk-Logical to physical.
+			c)Use of write-blockers on original media.
+			d)Tools:Encase, Forensics Toolkit, Native Linux(dd).
+
+		2)Network traffic and logs
+			a)Capture logs from static network systems
+				1.Virtual Machines
+				2.Firewalls, IDS, VPN, routers, switches
+				3.Severs
+				4.Access
+				5.Security Incident and Event Management(SEIM)/Centralized logging systems.
+			b)Active network scanning(on live systems)
+				1.Wireshark
+
+		3)Record time offset:
+			a)Coordinating time to accurately track events.
+			b)NTP-Network Time Protocols:synchronizes time.
+			c)Time zone differences.
+
+		4)Take Hashes
+			a)Hash-unique "fingerprint" of system files or data.
+			b)Tracks integrity or any changes- the hash value will change if a file changes.
+			c)The National Software Reference Library(NSRL) is to collect "known", tracable software applications" through their hash values and store them Reference Data Set(RDS).
+
+		5)Screenshots
+
+		6)Interview witness
+			a)List of people contacted or asked about the incident.
+			b)Who you interviewed, including their names, contact information(email, phone, address), and what they saw(when, where, and how)
+			c)Should be conducted with legal and/or HR.
+
+		7)Documentation/track hours:
+			a)Document everything
+			b)Written narrative
+			c)When and what was done
+			d)Evidence
+			e)Images
+			f)Pictures/video
+			Calculating the number of man-hours and other related expenses.
+
+5.6 Explain disaster recovey and continuity of operations concepts.
+5.6.1
+Disaster Recovery/Business Continuity.
+
+	a)Backup concepts
+	b)Recovery sites
+		1.Hot site
+		2.Warm site
+		3.Cold site
+
+	c)Order of restoration
+		1.Recovery Time Objective
+		2.Recovery Point Objective
+	
+	d)Geographic considerations.
+	e)Continuity of operations planning
+
+5.6.2
+Planning Documents:
+	a)Businness Continuity Plan(BCP)-ensure the restoration of organizational functions in the shortest possible time, even if services resume at  reduced level of effectiveness or availability. Similar to Contiuity of Operations Plan(CoOP).
+
+	b)Disaster Recovery Plan(DRP)-ensure a full recovery of operational capacity following a disaster(natural or manmade).
+
+	c)Should be determined and written prior to an incident.
+
+	d)A restoration plan should include contingency planning.
+
+5.6.3
+Recovery Sites:
+	Backup sites-Locations for recovering systems and/or business operations. Types:
+	
+	a)Hot site- Servers, networks, and telecommunications equipment in place and on-line to reestablish service. Most expensive.
+
+	b)Warm site-Some equipment in place. May not be online. Requires administrators to install and configure systems to resume operations.
+
+	c)Cold site-Facility that isn't immediately ready to use. May need to bring your own equipment. Least expensive.
+
+5.6.4
+Order of Restoration:
+	a)Prioritized restore sequence.
+	b)Based on Business Impact Assessment(BIA)
+	c)Most critical systems restored first
+	d)RTO(Recovery Time Objective)-The maximum amount of time that a process or service is allowed. 
+	e)RPO(Recovery Point Objective)-The point last known good data prior to an outage that is caused to recover systems.
+
+5.6.5
+Types of Backups:
+	a)Full-Complete backup of all data.
+	
+	b)Incremental-Requires a full backup. Capture what has changed since the last incremental backup. Requires each incremental backup along with the full for complete restoration.
+	
+	c)Differential-saves the data that has changed since the last full backup. Requires the full backup and most recent differential backup.
+
+	d)Copies and snapshots- Like full backup. Stored on the system.
+
+5.6.6
+Backup Stratergy
+	a)Grandfather-father-son backup -define three sets of backups. The first set, the son, represents daily backups. A second set, the father, is used to perform full backups. The final set of three tapes, the grandfather, is used to perform full backups on the last day of each month.
+		-Over time, the son becomes the father and the father the grandfather.
+		-The most common statergy.
+
+	b)Geographical considerations:
+		1.Alternate site planning
+		2.location for recovery
+		3.Utilities
+		4.Proximity to main site.
+		5.Personnel
+		6.Legal Implications
+		7.Use of cloud services
+
+	c)Continuity of operations planning(COOP)
+		1.Policies and procedures-designed to ensure that an organization can recover from a potentially destructive incident and resume operations as quickly as possible following that event.
+		
+		2.Ensures systems, data and personnel availability.
+
+		3.Failover-system redundancy
+
+		4.Availability of alternate processing, work sites and facilities.
+
+		5.Alternate business practices.
+
+		6.Testing, training and excercises. 
+
+5.7
+Compare and contrast various types of controls.
+
+Control: 
+	a)A defense or countermeasurment put in place to manage risk.
+
+	b)Policies, strtergies, technologies, configuration settings, etc. established in collaboration with various departments of an organization to help mitigate known risks.
+
+	c)The means of managing risk, including policies, procedures, guidelines, practices or organizational structures, which can be of an administrative, technical, management, or legal nature.
+
+5.7.1 Types:
+a) Technical/logical-
+	1.Implemented through technology
+	2.My be deterent, preventive, detective, or compensating.
+	3.Examples-Patching,Firewalls,IDS/IPS,Access controls
+
+b)Administrative/Management
+Documents policies,procedures, and guidelines
+	1.Acceptable Use Policy
+	2.Incident Response Plan
+People/personnel
+	1.Security operations Center
+	2.Guards
+	3.Surveillance
+
+c)Physical/Operational
+	1.Reduce the risk of harm coming to physical property, informations, computer systems, or other assets.
+	Examples:
+		a)Hardened facilities
+		b)Locks
+		c)Badges
+d)Deterrent Controls
+	1)Intended to discourage individuals from intentionally violating security policies, procedures, or technologies.	
+
+	2)Highly visible
+	
+	3)Prevent offenses or abuses by influencing choices.
+		
+e)Preventive Controls
+	1)Stop an unwanted event(breach,fraud,outage,errors etc.)
+	2)Proactive measures
+	Examples
+		a)Access, authentication, authorization, verification
+		b)Seperation of duties
+		c)Technical Standards
+		d)Network security-Firewalls,IPS
+		e)Internet Filtering
+
+f)Detective Controls
+	1)Warning of anomilies or violations
+	2)Automated or manual
+	3)Reactive
+	Examples:
+		a)Cameras
+		b)Motion sensor
+		c)Intrusion Detection System/SEIM 
+		d)Audits
+
+g)Corrective Controls
+	1)Measures to lesson harmful effects or restore the system being impacted.
+	2)Mostly reactive measures.
+
+	Examples:
+		a)Patching/upgrades
+		b)Hardening(physical & logical)
+		c)Process improvements
+
+h)Compensating Control:
+	1)Alternate controls that are intended to educe the risk of an existing or potential control weakness.
+
+	2)Mechanism(process, technology, etc) that satisfies a required security measure.
+
+	3)PCI DSS
+
+5.8 
+Data Security and Privacy practices
+
+	5.8.1
+	Data sensitivity labeling and handling
+		a)Data/Information classified according to its value and level of sensitivity.
+		b)The appropriate level of security can be applied.
+		c)Process should be:
+			1.Easy to apply 
+			2.Consistent
+			3.Visible
+
+		d)Classifications:
+		Common Labels-
+			1.Public/Unclassified- No harm if disclosed.
+			2.Confidential- Limited harm if disclosed.
+			3.Secret- Grave harm if disclosed
+			4.Proprietary- Limited to internal use only. Resticted externally.
+			5.Private- Information regarding people.
+
+		Legal Sensitive Data Types-
+			1.PII-Personally Identifiable Information
+				a)Data that identifies or is tracable to a specific individual.
+				b)Name, Social Security number, Biometrics, Address.
+
+			2.PHI-Protected Health Information
+				a)HIPAA, "any information about health status, provision of helth care, or payment for health care that is created or collected by a "Covered Entity" that can be linked to a specific individual."
+
+		Data Roles:
+			1.Data Owner
+			2.Data Custodian
+			3.Privacy Officer
+
+
+		e)Data Retention and Disposal-
+			1.Retention-
+				a)US Federal Rules of Civil Procedure(FRCP)
+				b)Keep information for as long as you need it no longer.
+				c)Set in a Data Protection Policy
+
+			2.Disposal-
+				Properly disposing of data and associated hardware.
+
+		f)Data destruction and media sanitization
+			1.Trusting third parties for destruction.
+			2.Observe destruction process.
+			3.Transportation to destruction facility
+			4.Use of media after destruction.
+			5.Best practice is to combine methods
+			
+			6.Specific ways:
+				a)Burning-Use of heat or fire. Not enviroment friendly.
+
+				b)Shredding-Reduces the size of objects with the intent of making them no longer usable. Items may be re-assembled.
+
+				c)Pulping- Reduces paper to liquid slurry. Can then be safely recycled.
+
+				d)Pulverizing-Using hydraulic or pneumatic action to reduce the materials to loose fibres and shards. Disadvantage-cost.
+
+				e)Degaussing-Using a large magnet to remove data from magnetic storage media such as hard drives and magnetic tapes.
+
+				f)Purging-Removing files and all traces of data. Sanitization
+
+				g)Wiping-Overwriting data. Data is replaced(often with random 0's and 1's) and then removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

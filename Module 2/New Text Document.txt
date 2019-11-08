@@ -1,0 +1,266 @@
+Technologies and Tools
+2.1
+OSI Model, DOD 3-layer Model
+2.1.1
+Network Security Components
+a)Router 
+b)Switch 
+c)Bridge
+d)Proxy
+e)Load balancer
+f)Wireless Access Points
+
+A)Router Security: 1)ACLs(Access Control Lists) 2)Zones-Segmenting Networks based on functionality or security.
+				   3)Antispoofing
+B)Switch Security: 1)Virtual LANs-Segments networks and splits broadcast domain
+				   2)Port Security-Enable/Disable individual ports
+				   (It is vulnerable to Mac Spoofing)
+				   3)Loop Prevention- Using Spanning Tree Protocol(STP) 
+C)Proxy- Transparent,Forward,Reverse
+D)Load Balancer- Software or Hardware Device 
+			     1)Scheduling: distributing load
+				 a)Round Robin
+				 b)Least connections
+				 c)Random
+E)Access Points: a)Fat
+				b)Fit
+				c)Thin
+				d)Controller-based vs Standalone
+
+F)Firewalls: Network or host based
+			 Based on Filtering Types:
+			 a)Packet filter
+			 b)Proxy firewall
+			 c)Stateful packet inspection
+G)VPN Concentrators: a)Network Security through encryption-
+						1)IPsec (Internet Protocol Security):
+							a)Authentication Header -for authentication and integrity checking for data packets
+							b)Encapsulation Security payload- encryption services
+					 
+						2)SSL(Secure Sockets Layer)-TLS replaces SSL
+
+H) Unified Threat Management(UTM)/Next Generation Firewall(NGFW)
+-------------------------------------------------------------
+2.2
+Given a scenerio, use appropriate software tools to assess the security posture of an organization.
+Tools:
+A)Protocol Analyzers/Packet Sniffers: Wireshark
+B)Network Scanners/mappers: solarwinds,Nmap
+C)Vulnerability Scanners: Nessus, OpenVAS, Nexpose ,Qualys Freescan
+D)Web Application Testing: OWASP ZAP
+E)Exploitation Frameworks: Metasploit						
+F)Configuration Compliance:
+G)Password Crackers: Brutus,Cain and Abel, John the Ripper
+H)Data Sanitization Tools : DBAN, BCWipe, Cryptographic erase
+I)SysInternals Suite: 
+
+2.3
+Security Troubleshooting
+a)Asset Management
+b)Access Violations
+c)Permissios Issues:
+    Privilege creep-Employee adding permissions over time
+d)Authentication Issues
+e)Certificate Issues
+f)Security Configuraton 					 
+g)Baseline deviation-used in IPS
+
+2.4
+Given a scenerio, analyze and interpret output from Security technologies
+A)Host Technologies:
+    1)Firewalls 
+        a)In Windows type wf.msc in cmd to open firewall.
+        b)In Linux there is UFW(uncomplicated firewall) or iptables
+
+    2)Firewall Configuration:
+        a)End users shouldn't be allowed to disable the firewall
+        b)Monitor both incoming and outgoing network traffic
+
+    3)Output depends on the Firewall applications and OS
+        a)Windows Event Viewer
+        b)Linux logging /var/log
+
+B)HIDS/HIPS:
+
+C)Antivirus
+    a)Quarantine vs Removal
+    b)Issues:
+        1)AV not updated/outdated signatures
+        2)False Positives
+        3)May be ignored or not seen
+        4)Incorrect decision
+        5)Malware still be present
+
+D)File Integrity Checker
+
+E)Application Whitelisting:
+    a)Organization approves/permits software applications
+      All others are not allowed.
+
+    b)Windows AppLocker
+      Based on certain conditions:
+        1)Publisher, for digitally signed files
+        2)Path, which identifies an application by its location
+        3)File hash, which uses a system-computed cryptographic hash
+
+F)Data Loss Prevention(DLP)
+    a)Prevent sensitive information from physically or logically leaving corporate systems
+    b)Designed to detect and prevent unauthorized use and transmission of confidential information
+    c)Should include corporate data stored in the cloud.
+    d)Network: Content-filtering(proxy)
+    e)System: Application white-listing
+    f)Hardware: USB blocking
+
+G)Patch Management:
+    a)Automate updates when possible
+    b)Patching process
+        1)Vendor notification
+        2)Testing
+        3)Staged Deployment
+        4)Reporting
+    c)Alerting on failed patches
+    d)Patching all applications/systems
+
+H)WAF(Web Application Firewalls)
+
+I)Data Execution Pevention(DEP):
+    a)Hardware or Software
+    b)Prevents malware from executing in memory space that is reversed for os processes.
+    c)Both Advanced Micro Devices(AMD) and Intel platforms have DEP hardware capabilities.
+    d)Available on Windows 10 under the performance options.
+
+2.5
+Given Scenerio, deploy mobile devices securely
+A)Connection Methods:
+    a)Cellular
+        1)Components-towers, base stations, Mobile Switching Centers, Public Switched Telephone Networks
+
+        2)Voice Technologies-Long-Term Evolution(LTE), GSM(Global Systems Mobile)
+
+    b)Bluetooth- Personal Area Network(PAN), piconet
+
+    c)NFC(Near Feild Communication)
+
+B)Mobile Device Management(MDM)
+    a)Admininstration of mobile devices in an organization.
+    b)Device enrollment, provisioning, and inventory
+    c)Configuration management/updating
+    d)Managing Applications
+    e)Enforcing policies
+    f)MDM Capabilities:
+        1)Mobile Application Management(MAM):
+            -Restricting apps
+            -Digitally Signing apps
+            -Distribution from a centralized, controlled source
+            -Managed via blacklisting or blacklisting
+        2)Mobile Content Management(MCM):
+            -Controlling access to data and file storage
+        3)Push Notification Services
+            -alerts
+            -Operating System Push Notification Service(OSPNS)
+        4)Geolocation
+        5)Geofencing:
+
+
+    g)MDM concepts:
+        1)Seperate personal and business content
+        2)Storage segmentation:
+            -Segreagate business nd personal storage
+        3)Containeriztion:
+            -Seperate Seperate sensitive corporate information from the user's personal use of the device
+            -Ability to isolate apps and control app functions
+        4)Remote wipe/Sanitization:
+            -Sending a commnd from centralized management server to remotely clear data.
+            -Used when device is lost/stolen or employee terminates.
+        5)Full device encryption:
+            -Use TPM when available
+        6)Screen locks/Lockout: Screen configured to automatically lock after set time.
+        7)Passwords and Pins 
+        8)Biometrics
+        9)Context aware authentiction:
+            -Additional criteria usd for authentication or device usage.
+            e.g Location, time, activity etc.
+
+C)Deployment Models
+    a)BYOD-Bring Your Own Device
+    b)CYOD-Choose Your Own Device
+        -Emplyee choose from list of devices.
+    c)COPE-Company-Owned Provided Equipment
+        -Company has complete control over the device.
+    d)VDI-Virtual Desktop Infrastructure 
+
+D)Enforcement and Monitoring
+    a)Third-party app stores
+        -Restrict based on policy
+        -Whitelist applications
+    b)Rooting(Android)/Jailbreaking(Apple)
+        -User takes full control of the device(root)
+        -Should be forbidden for corporate devices.
+    c)Sideloading
+        -Transfer data between 2 devices-side channel
+    d)USB On-the-Go(OTG)
+    e)Custom firmware 
+        -Valid use: Forensics aquisition
+        -Invalid: Bypass policy
+    f)Carrier Unlocking:
+        -Now legal in US
+
+2.6
+Security Protocols and Use cases
+A)    a)SSL
+    b)TLs
+    c)HTTPS
+    d)DNSSEC
+    e)SSH
+    f)Secure Mail(Secure/Multipurpose Internet Mail Extensions)
+        -A standard for encryption and signing of MIME data.
+        -Requires PKI and uses Certificate Authorities
+        -Internal Email
+        -POP3 and IMAP
+    g)FTPS- FTP extension that adds SSL/TLS
+        -FTPS Implicit over port 990
+        -FTPS Explicit over port 21
+        -SFTP(Secure FTP)-uses SSH to transfer files. 
+    h)SRTP(Secure Real Time Transfer Protocol)
+        -Extension to RTP
+    g)LDAPS
+        -uses SSL/TLS
+        -port 636
+    h)SNMPv3
+
+B)Use cases:
+    a)DHCP
+    b)NTP
+    c)Subscription services
+        -Saas
+        -Cloud Email
+        -Network Defenses
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

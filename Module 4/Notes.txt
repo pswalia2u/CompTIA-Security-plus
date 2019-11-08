@@ -1,0 +1,213 @@
+Identity and Access Management
+4.1 
+Identity and access management concepts:
+4.1.1 Identification and authentication
+	a)Identification
+		1)First Step
+		2)Subject provides identification information-unique to subject
+		3)Username, User ID, Account Number
+	
+	b)Authentication
+		1)Verifying the identification information
+		2)Proving identity
+		3)Password/phrase, PIN,fingerpprint, Smart card
+4.1.2 Authorization and Auditing
+	a)Authorization
+		1)What you allowed to see or do
+		2)Determining the operations a subject may perform on an object
+		3)Permissions
+	b)Auditing/Accounting:
+		1)Record of events
+		2)logs
+	
+4.1.3 Authentication Factors:
+	a)Something you know like PIN,password
+	b)Somethin you hve, such as smartcard, token, or identificaion device.
+	c)Something you are, like fingerprints or retinal patterns.
+	d)Somthing you do, such as an actionyou must take to complete authentication.
+	e)Where you are(geolocation)
+	
+4.1.4 Authentication
+	a)Single Factor(SFA)
+	b)Multi-Factor Authentication(MFA)
+	c)Mutual Authentication:
+		each party validates the other's identity.
+
+4.1.5 Biometrics
+	a)Type III Something you are.
+	b)Challenges:
+		1)False Acceptance Rate(FAR):when system accepts someone(intruder) who should be r		  ejeted.
+		2)False Rejection Rate(FRR): When the system reject an suhtorized user.
+		3)Cross-Over Error Rate(CER):
+			Metric for complaining biometric systems.
+			The point where FAR and FRR are equal.
+
+4.1.6 Federation/Federtion Identity:
+	a)The means of linking aperson's electronic idemtity and attributes 	    stored across multiple distinct identity management systems.
+	b)Means linking a user's identity with their privileges in manner that can be used across business boundaries.
+	c)Allows a user to have single identity that they can use across different businesses.
+	d)Like Facebook,Google,Microsoft
+	
+4.1.7 Single Sign-On
+
+4.2 Given a scenerio, install and configure identity and access services.
+
+4.2.1 Directories/Directory Service Protocols:
+	a)Repositories of an organisation's network resources and users.
+	b)Most follow a hirarchial database format, based on X.500 standard. 	    c)A directory service manages the entries and data in the directory and enables access control and identity management.
+	d)Types: Microsoft Active Directory(AD), and LDAP
+	
+4.2.1.1 LDAP (Lightweight Direcory Access Protocol)
+	a)A standardized directory access protocol.
+	b)Main purpose is to query the LDAP user database- pared-down X.500-based directories.
+	c)Supported by most major vendors including Microsoft AD and OpenLDAP.
+	d)Hierarchical structure
+
+4.2.1.2 LDAP Security
+	a)LDAP is vulnerable to snooping.
+	b)Encrypt communications using SSL/TLS to secure LDAP transmissions.	    c)Certificates can validate authentication requests.
+	d)LDAPv3 bind requests should use Simple Authentication and Security Layer(SASL)
+	   
+4.2.2 Kerberos
+	a)A symmetric key authentication protocol
+	b)Kerberos v5 uses mutual authentication between the requesting client and the supporting server through a Key Distribution Center(KDC)
+		1)Tickets lists user's privileges.
+	c)Each time user wishes to access some resource on the network, the user's computr presents the KDC with the TGT; the TGT then sends that user's computer a service ticket, granting user access to that service.
+	
+	d)Kerberos Authentication Process:
+		1)Each time user wishes to access some resource on the network, the user's computer presents the KDC with the TGT.
+		2)The TGT then sends that user's computer a service ticket, granting the user access to that service.
+		3)User's computer then sends the service ticket to the server the user is trying to access.
+		4)As a final authentication check, that server then communicates with TGT to confirm and valdate the session.
+
+4.2.2.3 RADIUS(Remote Authentication Dial-In User Service):
+	a)An IETF standard 
+	b)Implemented by most of the major os manufacturers.
+	c)Uses UDP transport to a centralized server providing authentication and access control for networks.
+
+4.2.2.4 Terminal Access Controller Access Control System Plus(TACACS+):
+	a)Handles authntication, authorization, and accounting(AAA) servics
+	b)Similar to RADIUS
+	c)TCP rather UDP as it's tranport method.
+	d)Client/Server model
+   	e)TACACS+ advantages over RADIUS:
+		1)TCP rather than UDP as it's transport method- more reliable.
+		2)Encrypts the entire packet, not just authentication.
+		3)Controls the authorization of router commands.
+
+4.2.2.5 Password Authentication Protocol(PAP)
+4.2.2.6 Challenge Handshake Authentication Protocol(CHAP)
+	1)It provides on-demand authentication over encrypted channels
+	2)Server first authenticates client.
+	3)Client generates a one-way hashing function(MD5 algorithm) and sends to the service.
+	4)Client hash is compared against service's hash by the authenticator service.
+	5)Process is repeated at random intervals to prevent replay attacks.
+
+4.2.2.7 MSCHAP and PEAP
+	a)MSCHAPv2-Microsoft proprietary version.
+	b)Uses a new string each time for authentication.
+	c)the client and server mutually authenticate and use two encryption keys.
+	d)It should not be used alone but with PEAP(Protected Extensible Authentication Protocol) ot L2TP/IPSec
+        e)PEAP
+		1)PEAP provides a TLs/SSL tunnel
+		2)Protects authentication trafic.
+		3)Uses a certificate on the authentication server.
+	
+4.2.3 Federated Services
+	1)Security Assertion Markup Language(SAML)
+		a)An Extensible Markup Language framework for creating and exchanging security information between online systems.
+		b)Main purpose is SSO for enterprise users over the web.
+		c)Three main functions:
+			1)The user seeking to verify its identity is the principal.
+			2)The entity that can verify the identity of the end user is the Identity Provider.
+			3)The identity that uses the Identity Provider to verify the identity of the end user is the Service Provider.
+
+	2)Open Authorization(OAuth):
+		a)Protocol used for Internet token based authorization.
+		b)Purpose is API authorization between applications.
+		c)Current version is 2.0.
+		d)Allows access tokens to be issued to third-party clients(resource consumers) with approval of the resource owner, such s social media site.	
+		e)OAth 2.0 uses the JSON and HTTP protocols.
+		Use SSL/TLS to prevent eavesdropping.
+
+	3)OpenID and OpenID Connect:
+		a)An idenetiy based on OAuth 2.0 specifictions
+		b)Used for consumer single sign-on
+		c)OpeID Connect implements authentication as an exension to the OAuth 2.0 authorization process. Provides additional security- staging, encryption of identity data, and session management.
+		d)Uses an ID token structure including the authentication of an end user via a JSON web token(JWT). AJWT is used to prove that an authentic source created the originating data.
+
+4.3 Access Control Models:
+	a)Terms:
+		1)A subject is an active entity(generally an individual, process, or device).
+		2)An object is some resource that the subject is attempting to access.
+	b)MAC- Mandatory Access Control:
+		1)Assigning labels to resources and accounts(objects).
+		2)Users and system accounts(subjects) are assigned a classification level. 
+		3)Examples: SECRET, CONFIDENTIAL, PROPRIETARY and PUBLIC
+		4)Subjects access rights must be above the objects classification.
+		5)Access is nondiscretionary.
+		6)Used in government/military.
+		7)Rigid and most secure.
+
+	c)DAC- Discretionary Access Control:
+		1)Access rights at the discretion of the system or information owner/ Security principal.
+		2)Owner assigns security accesshas flexibility in accessing information or systems.
+		3)Allows dynamic sharing.
+		4)Increased risk of unauthorized disclosure or access.
+
+
+
+
+	d)ABAC- Attribute-based access control:
+		1)Defined in NIST 800-162, Attribute Based Control Definitions and Considerations.
+		2)Attributes are characteristics that define specific aspect of the subject, object, enviroment conditions, and/or requested actions that are predefined and preassigned by an authority.
+		3)Considers all of the various attributes associated with the subject and object in making the acccess control decision.
+		4)A dynamic access control method.			
+		5)Based on the Extensible Access Control Markup Language(XACML)
+
+	e)Role-based access control(RBAC):
+		
+	f)Rule-based access control(RBAC)
+	
+	g)Tokens:
+		1)Physical device used for access.
+		2)Software or hardware based.
+		3)One-Time passwords(OTP):
+			a)HTOP-HMAC OTP-uses a hash
+			b)TOPT-Time-based-limited time availability
+		4)Examples:wireless keycard, key fob, or any physical device
+		5)Contains a digital certificate and/or static password:s token.
+	
+	h)Physical Access Controls:
+		a)Both use embedded microchips.
+		b)Also see PIV and CAC- using certificates.
+	
+	i)Proximity cards
+		1)Hold little information
+		2)Determines access by matching the card identification number to access database information.
+
+	j)Smart Cards
+		1)Provides n authenticating cryptographic key reader.
+		2)May include other informationon a progrmmble chip(biometrics, certificates)
+	
+	k)Certificate-based authentication:
+		1)PIV/CAC smart card
+			a)Personal Identity Verification(PIV) cards- Contactless smart card used by US Federl Workers.
+			b)Common Access Card(CAC)-A credit card seized smart card used by US DoD workers. Inserted into  small card reader authenticated with a PIN.
+		2)IEEE 802.1x
+			a)Certificate based network authentication.
+			Allows only authorized devices to connect to the network.
+
+4.3.2 File System Security
+	a)File System Security(aka "flat files"):
+		1)Leverage access controls, encryption and RAID 
+		2)Microsoft NTFS allows file-level access control where FAT allows only share-level access.
+		3)Consider using encryption for sensitive directories/media.
+
+4.3.3 Database Security:
+	1)Store organizations most sensitive/critical data.
+	2)Leverage network security and access, controlswithin the Database Management Systems(DBMS).
+	3)Trnsparent Data Encryption(TDE) for data
+	4)Crypto Key management.	
+
+
