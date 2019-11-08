@@ -1,1 +1,1 @@
-# Notes for Preparing for Comptia plus Certification.
+# Notes for Preparing for ComptTIA Security+ Certification.
